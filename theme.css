@@ -1,14 +1,124 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
-}
+:root {
+	--black: #06121d;
+	--white: #fefefe;
+	--primary: #282b2e;
+	--secondary: #cccccc;
+	--tertiary: var(--white);
+	--blue: #2b7cce;
+	--red: #d40d2c;
+	--transactional: #009e73;
+	--notif: #fcf3e7;
+	--notif-transactional: #abdfd0;
+	--notif-error: #ffdbdb;
+	--notif-info: #bbf2fe;
+	--shadow: 0 0 1rem hsla(0, 0%, 94%, 1);
+	--button-shadow: 0.1rem 0.1rem 0.1rem hsla(0, 0%, 5%, 0.6);
+	--radius: 0.4rem;
+	--border: 0.1rem solid #c3c3c3;
+	--border-dark: 0.1rem solid hsla(0, 0%, 30%, 1);
+	--font-body: 'Poppins', sans-serif;
+	--font-headline: 'Poppins', sans-serif;
+	--font-subheads: 'Poppins', sans-serif;
+	--font-code: 'IBM Plex Mono', monospace;
+	--font-body-size: calc(1.4rem + (12 - 10) * ((100vw - 48rem) / (1366 - 480)));
+	--font-footer-size: calc(
+	  1.2rem + (10 - 8) * ((100vw - 48rem) / (1600 - 480))
+	);
+	--h1: calc(2.4rem + (22 - 20) * ((100vw - 48rem) / (1600 - 480)));
+	--h2: calc(2rem + (18 - 16) * ((100vw - 48rem) / (1600 - 480)));
+	--h3: calc(1.8rem + (16 - 14) * ((100vw - 48rem) / (1600 - 480)));
+	--h4: calc(1.4rem + (14 - 12) * ((100vw - 48rem) / (1600 - 480)));
+	--font-light-weight: 300;
+	--font-normal-code: 300;
+	--font-normal-weight: 400;
+	--font-medium-code: 400;
+	--font-medium-weight: 500;
+	--font-bold-weight: 600;
+	--font-bold-code: 600;
+	--max-width: 100%;
+	--line-height: 1.6;
+	--large-desktop: 136.6rem;
+	--desktop: 102.4rem;
+	--tablet: 76.9rem;
+	--phone: 48rem;
+	--z-menu: 100;
+	--caret-side: 0.5rem solid transparent;
+	--caret-menu: 1.1rem solid transparent;
+	--font-text-theme: var(--font-body);
+	--font-monospace-theme: var(--font-code);
+	--font-interface-theme: var(--font-body);
+  --page-title-font: var(--font-headline);
+  --font-text-size: var(--font-body-size);
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  @media screen and (max-width: 750px) body {
+	--popover-display: none;
+	--input-height: 36px;
+  }
+  body {
+	--tooltip-display: none;
+	--popover-display: flex;
+	--radius-s: 0.4rem;
+	--radius-m: 0.4rem;
+	--radius-l: 0.4rem;
+	--input-radius: 0.4rem;
+	--tab-radius-active: 0.4rem;
+	--checkbox-radius: 0.4rem;
+	--toggle-radius: 0.4rem;
+	--toggle-thumb-radius: 0.4rem;
+	--slider-thumb-radius: 0.4rem;
+	display: block;
+	margin: 8px;
+	font-family: var(--font-body);
+  }
+  * {
+	-webkit-tap-highlight-color: transparent;
+  }
+
+  * {
+	box-sizing: border-box;
+  }
+
+  /* Dark Theme Background */
+  ::selection {
+	background-color: var(--black);
+  }
+
+  /* Folder Icons */
+  .nav-folder-children .nav-file-title-content:first-child::before {
+	content: '\e924  ';
+	font-family: 'IcoMoon-Free';
+  }
+  .nav-folder-children .nav-folder-title-content::before {
+	content: '\e930  ';
+	font-family: 'IcoMoon-Free';
+  }
+
+  .nav-folder-children .nav-file-title-content:first-child::before {
+	content: '🗒 ';
+  }
+  .nav-folder-children .nav-folder-title-content::before {
+	content: '📂 ';
+  }
+
+  .published-container {
+	--page-width: var(--desktop);
+	--page-side-padding: 48px;
+	/* ... CSS variables for Publish that do not change when light or dark mode is enabled. They sometimes link to color variables in .theme-light or .theme-dark */
+  }
+
+  .theme-light {
+	--background-primary: var(--white);
+	--h1-color: var(--black);
+	/* ... CSS color variables for when light mode is enabled */
+  }
+  .theme-dark {
+	--background-primary: var(--black);
+	--h1-color: var(--white)
+	/* ... CSS color variables for when dark mode is enabled */
+  }
 
 .workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
 	display: none;
@@ -17,8 +127,6 @@ body {
 svg * {
 	stroke-linecap: square;
 	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
 }
 
 .menu {

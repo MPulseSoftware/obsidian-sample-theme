@@ -50,9 +50,9 @@
   --page-title-font: var(--font-headline);
   --font-text-size: var(--font-body-size);
   }
-  
+
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-  
+
   @media screen and (max-width: 750px) body {
 	--popover-display: none;
 	--input-height: 36px;
@@ -60,25 +60,32 @@
   body {
 	--tooltip-display: none;
 	--popover-display: flex;
-  }
-  * {
-	-webkit-tap-highlight-color: transparent;
-  }
-  
-  * {
-	box-sizing: border-box;
-  }
-  body {
+	--radius-s: 0.4rem;
+	--radius-m: 0.4rem;
+	--radius-l: 0.4rem;
+	--input-radius: 0.4rem;
+	--tab-radius-active: 0.4rem;
+	--checkbox-radius: 0.4rem;
+	--toggle-radius: 0.4rem;
+	--toggle-thumb-radius: 0.4rem;
+	--slider-thumb-radius: 0.4rem;
 	display: block;
 	margin: 8px;
 	font-family: var(--font-body);
   }
-  
+  * {
+	-webkit-tap-highlight-color: transparent;
+  }
+
+  * {
+	box-sizing: border-box;
+  }
+
   /* Dark Theme Background */
   ::selection {
 	background-color: var(--black);
   }
-  
+
   /* Folder Icons */
   .nav-folder-children .nav-file-title-content:first-child::before {
 	content: '\e924  ';
@@ -88,21 +95,20 @@
 	content: '\e930  ';
 	font-family: 'IcoMoon-Free';
   }
-  
+
   .nav-folder-children .nav-file-title-content:first-child::before {
 	content: '🗒 ';
   }
   .nav-folder-children .nav-folder-title-content::before {
 	content: '📂 ';
   }
-  
-  
+
   .published-container {
 	--page-width: var(--desktop);
 	--page-side-padding: 48px;
 	/* ... CSS variables for Publish that do not change when light or dark mode is enabled. They sometimes link to color variables in .theme-light or .theme-dark */
   }
-  
+
   .theme-light {
 	--background-primary: var(--white);
 	--h1-color: var(--black);
@@ -114,18 +120,6 @@
 	/* ... CSS color variables for when dark mode is enabled */
   }
 
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
-}
-
 .workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
 	display: none;
 }
@@ -133,8 +127,6 @@ body {
 svg * {
 	stroke-linecap: square;
 	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
 }
 
 .menu {
